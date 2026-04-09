@@ -1,1 +1,5 @@
 "#venv\n .venv .venv1 .cfg"
+venv .venv .venv1 .cfg
+"pdfs & .zip"
+.pdf
+.zip
