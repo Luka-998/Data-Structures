@@ -3,3 +3,4 @@ venv .venv .venv1 .cfg
 "pdfs & .zip"
 .pdf
 .zip
+.tex
