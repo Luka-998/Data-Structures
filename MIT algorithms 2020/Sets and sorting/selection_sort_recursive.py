@@ -1,52 +1,26 @@
 # Initially the same exercise as the "selection_sort" in the same repository, but with using the recursive apporach.
 
-first_list = [8,2,4,9,3,67,16]
+first_list = [8,2,4,9,3,16,255]
+L = len(first_list)
+# i will define find max function that i will call recursively during this task
 
-# Split the problem in smaller parts first:
+# find me the first 
+z = [41]
 
-# 1. Define the Base Case
-# The recursion stops when the list has only one element. 
-# In this case, the only available index is \(0\), which is naturally the index of the maximum element
+def find_max_id(arr):
 
-
-# 2. Recursive Step and Comparison
-# If the list has more than one element,
-# recursively find the index of the maximum value in the rest of the list (from index \(1\) to \(n-1\)).
-
-def get_max_id(arr):
-
+    
     if len(arr) == 1:
         return 0
-    
-    rest_array = arr[1:]
 
-    rest_array_max = get_max_id(rest_array)
+    next_id = find_max_id(arr[1:]) + 1
 
-    if arr[0] > rest_array[rest_array_max]:
+    if arr[0] > arr[next_id]:
         return 0
     else:
-        return rest_array_max + 1
-    
+        return next_id
 
-L = len(first_list)
+z = find_max_id(first_list)
 
-# get max id within the full list n
-# compare the max with the max of the sublist n -1
-# swap
+print(f"Index of maximum number in this list is: {[z]}\nNumber: {first_list[z]}\n{'*'*15}")
 
-def selection_sort(arr,L):
-    
-    if L == 1:
-        return arr[0]
-    
-    max_id = get_max_id(arr)
-    
-    arr[max_id],arr[-1] = arr[-1],arr[max_id]
-    
-
-
-
-
-
-z = selection_sort(first_list,L)
-print(z)
