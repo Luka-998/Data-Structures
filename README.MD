@@ -1,6 +1,7 @@
-#### This repository is used for tracking my knowledge about algorithms, developing algorithmic thinking and solving probmles.
+### This repository is used for tracking my learning progress in **Data Structures and Algorithms**
 
-##### I follow the **MIT OpenCourseWare** algorithms curriculum as my primary learning guide, while actively solving problems from:
+#### I follow the **MIT OpenCourseWare** algorithms curriculum as my primary learning guide, while actively solving problems
 
-##### I am commited to daily solving examples
+#### I am commited to daily solving examples
 
+---
