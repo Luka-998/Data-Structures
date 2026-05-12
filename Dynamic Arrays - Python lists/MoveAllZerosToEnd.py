@@ -37,6 +37,7 @@ Failures in this exercise:
 
 2) I did not capture correctly, non zero element.
 
-3) i did not capture correctly, the first zero element. State capture was wrong.
+3) Be more aware of the state. When 0 is encountered, i label it's index and state = True. The first next non-zero element is swapped with this zero
+    but zero_index is incremented by 1 , because that zero is now +1 index to the right.
 
 """
