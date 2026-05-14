@@ -8,6 +8,9 @@ Output: {3, 4, 5, 6, 1, 2}
 
 """
 
+# Space O(1) 
+# Time O(n*d), complex time. If d was a size of d -> O(n**2)
+    
 arr = [1, 2, 3, 4, 5, 6]
 arr2 = [1,2,3]
 d = 2
@@ -22,3 +25,14 @@ def rotate_array(arr):
 
 z = rotate_array(arr2)
 print(z)
+
+
+"""
+After poppin the 1st element from the array, and appending it to the end of the array,
+I need again first element. It is always 0!
+
+First error was trying to swap arr[i],arr[-1] because i has values of 0,1 for d=2 , which is wrong. 
+In first iteration i would swap 1st and last element and in the second iteration i would swap 2nd and last element.
+
+
+"""
