@@ -35,7 +35,3 @@ def find_major(arr):
 p = find_major(array)
 print(p)
 
-
-print(15/2)
-print(15//2)
-print(15%2)

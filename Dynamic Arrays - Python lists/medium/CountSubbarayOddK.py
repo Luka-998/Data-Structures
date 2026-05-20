@@ -26,7 +26,4 @@ def get_array_k(array,k):
 
 z = get_array_k(test2,k2)
 print(z)
-                    
 
-
-            
