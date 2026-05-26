@@ -26,14 +26,18 @@ strs = ["flower","flow","flight"]
 
 def get_prefix(arr):
     
-    str_idx = 0
-    total_curr = ""
-
-    for name in arr:
-        char_pos = name[str_idx] #0
-        current = ''
-        for char in name:
-            current+=char
+        min_len = strs[0]
+        for name in strs:
+            if len(name) < len(min_len):
+                min_len = name
+    
+        i = 0
+        while i < len(min_len):
+            for s in strs:
+                if s[i] != strs[0][i]:
+                    return s[:i]
+            i+=1
+        return strs[0][:i]
 """
 finish this
 
