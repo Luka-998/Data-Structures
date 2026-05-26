@@ -3,13 +3,9 @@
 # 14. Longest commong prefix
 
 """
-
-
-
 Write a function to find the longest common prefix string amongst an array of strings.
 
 If there is no common prefix, return an empty string "".
-
 
 Example 1:
 
@@ -19,41 +15,28 @@ Output: "fl"
 Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
-
 """
 
 strs = ["flower","flow","flight"]
 
 def get_prefix(arr):
     
-    str_idx = 0
-    total_curr = ""
+    # rearrange array
 
+    min_len = arr[0]
     for name in arr:
-        char_pos = name[str_idx] #0
-        current = ''
-        for char in name:
-            current+=char
-"""
-finish this
+        if len(name) < len(min_len):
+            min_len = name
+    
+    i = 0
+    while i < len(min_len): # flow
+        for s in arr:
+            if s[i] != arr[0][i]: #f
+                return s[:i]
 
-"""
-
-        
-            
-
-            
+        i+=1
+    return strs[0][:i]
 
 z = get_prefix(strs)
 print(z)
-"""
-u prvom delu dodat je prvi indeks prve reci 'f' u total curr
-> izlazim iz prve reci 
 
-ulazim u 'flow'
-prefix je i dalje 0 
-
-nije empty:
-moram da upored prvi string iz total_curr sa prvim indeksom druge i trece reci
-ako su isti total_curr ostaje 
-"""
