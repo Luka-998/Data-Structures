@@ -28,18 +28,21 @@ Constraints:
     There will be at least one word in s.
 
 """
-s = "   fly me   to   the moon  "
+s = "a"
 
-def get_longest(str):
+def get_last(str):
 
-    count = 0
+    curr = ''
     empty = True
-    for s in range(len(str),0,-1):
-        if str[s-1] == ' ' and not empty:
-            print(count)
-        elif str[s-1] != ' ' and empty:
-            count +=1
+
+    for s in str[::-1]:
+        if s == ' ' and empty:
+            continue
+        if s != ' ':
+            curr +=s
             empty = False
-    return count
-z = get_longest(s)
+        if s == ' ' and not empty:
+            return len(curr)
+    return len(curr)
+z = get_last(s)
 print(z)
