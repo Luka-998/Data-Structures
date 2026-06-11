@@ -40,3 +40,5 @@ def get_number(x):
         return False
 p = get_number(x)
 print(p)
+
+"EASY VERSION WITH STRING CONVERSION"
