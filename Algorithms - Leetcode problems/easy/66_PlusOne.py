@@ -31,7 +31,7 @@ Thus, the result should be [1,0].
 
 """
 
-digits = [9]
+digits = [5,2,9,9,9]
 
 
 def get_increment(arr):
