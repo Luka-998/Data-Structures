@@ -4,3 +4,7 @@ venv .venv .venv1 .cfg
 .pdf
 .zip
 .tex
+.h5ad
+*.h5ad
+*.vscode
+../*.vscode/
