@@ -49,6 +49,7 @@ def get_result(arr):
             right -=1
         else:
             return True
+    return False
     
 
 
