@@ -29,10 +29,18 @@ target  = 8
 
 # output [3,4]
 
+<<<<<<< HEAD
 def solution(nums,target,leftBias):
     left = 0
     right = len(nums) - 1
     candidate = -2
+=======
+def solution(nums,target):
+
+    left = 0
+    right = len(nums) - 1
+    found = []
+>>>>>>> f40d8ac025847d8500919bdb70039e1b6210c01d
     
     # basecase
     
@@ -41,13 +49,18 @@ def solution(nums,target,leftBias):
 
     while left <= right:
         middle = (left+right) // 2
+<<<<<<< HEAD
         
+=======
+        print(middle)
+>>>>>>> f40d8ac025847d8500919bdb70039e1b6210c01d
 
         if target < nums[middle]:
             right = middle -1 
         elif target > nums[middle]:
             left = middle +1
         elif target == nums[middle]:
+<<<<<<< HEAD
             candidate = middle
             # left
             if leftBias:
@@ -55,13 +68,24 @@ def solution(nums,target,leftBias):
             else:
                 left = middle + 1
     return candidate
+=======
+            found.append(middle)
+            right = middle - 1
+
+    return found
+>>>>>>> f40d8ac025847d8500919bdb70039e1b6210c01d
     
 
 
 
 
 
+<<<<<<< HEAD
 z1 = solution(nums,target,leftBias=True)
 z2 = solution(nums,target,leftBias=False)
 res = [z1,z2]
 print(res)
+=======
+z = solution(nums,target)
+print(z)
+>>>>>>> f40d8ac025847d8500919bdb70039e1b6210c01d
