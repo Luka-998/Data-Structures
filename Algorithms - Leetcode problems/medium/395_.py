@@ -20,8 +20,8 @@ Explanation: The longest substring is "ababb", as 'a' is repeated 2 times and 'b
 
 """
 
-s = "ababacb"
-target = 3
+s = "ababbc"
+target = 2
 
 def solution(arr,target):
 
@@ -32,22 +32,25 @@ def solution(arr,target):
         tracker = {}
         for j in range(i,len(arr)):
             current +=arr[j] # a , b {a:1, b:1}
-            print(current)
             if arr[j] not in tracker:
                 tracker[arr[j]] = 1
             else:
-                tracker[arr[j]] +=1
+                tracker[arr[j]]+=1
             for key,value in tracker.items():
-                if not value >= target:
-                    pass
-                elif len(current) > res:
-                    res = len(current)
+                if tracker[key] < target:
+                    continue
+                elif tracker[key] >= target:
+                    print(current[key])
+
+            
+                    
+
+
+                    
+
 
                 
-    if res == 0:
-        return 0
-    else:
-        return res
+
         
 
 z = solution(s,target)
