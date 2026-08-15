@@ -23,10 +23,16 @@ from timeit import default_timer
 
 s = "aaabb"
 target = 3
+<<<<<<< HEAD
 start = default_timer()
 
 def solution(arr,target):
     
+=======
+
+def solution(arr,target):
+
+>>>>>>> 8f3e34422e4952959e6401649b9a41feb178ba74
     res = 0     
     
     for i in range(len(s)):
@@ -46,6 +52,7 @@ def solution(arr,target):
             if is_valid:
                 if len(current) > res:
                     res = len(current)
+<<<<<<< HEAD
 
     if res ==0:
         end = default_timer()
@@ -56,6 +63,15 @@ def solution(arr,target):
         print(start-end)
         return res
 
+=======
+    if res ==0:
+        return 0
+    else:
+        return res
+
+
+  
+>>>>>>> 8f3e34422e4952959e6401649b9a41feb178ba74
 z = solution(s,target)
 print(z)
         
