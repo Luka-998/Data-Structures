@@ -22,26 +22,28 @@ Output: 0
 
 """
 
-target = 7
-nums = [2,3,1,2,4,3]
+target = 15
+nums = [1,2,3,4,5]
 
 def solution(nums,target):
 
-    min_len = 0
+    res = len(nums) + 10
+  
 
     for i in range(len(nums)):
         current = 0
-        for j in range(len(nums)):
+        for j in range(i,len(nums)):
             current+=nums[j]
-            current_len = len(nums[i:j+1])
             if current >= target:
-                if current_len < min_len:
-                    min_len = current_len
-    return min_len
-            
+                print(nums[i:j+1])
+                if len(nums[i:j+1])<res or len(nums[i:j+1])==res:
+                    res = len(nums[i:j+1])
 
-
-               
+    if res == len(nums) + 10:
+        return 0
+    else:   
+        return res
 p = solution(nums,target)
 print(p)
 
+# pada testacse kada je ceo nums zapravo zbir >= target.
