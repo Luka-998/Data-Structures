@@ -27,8 +27,7 @@ nums = [1,2,3,4,5]
 
 def solution(nums,target):
 
-    res = len(nums) + 10
-  
+    res = len(nums) + 1
 
     for i in range(len(nums)):
         current = 0
@@ -36,13 +35,15 @@ def solution(nums,target):
             current+=nums[j]
             if current >= target:
                 print(nums[i:j+1])
-                if len(nums[i:j+1])<res or len(nums[i:j+1])==res:
+                if len(nums[i:j+1])<res: 
                     res = len(nums[i:j+1])
-
-    if res == len(nums) + 10:
+                elif len(nums[i:j+1])==res:
+                    res = len(nums[i:j+1])
+    if res == len(nums) + 1:
         return 0
-    else:   
+    else:
         return res
+
 p = solution(nums,target)
 print(p)
 
