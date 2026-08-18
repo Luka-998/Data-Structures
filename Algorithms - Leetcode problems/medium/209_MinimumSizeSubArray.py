@@ -47,4 +47,32 @@ def solution(nums,target):
 p = solution(nums,target)
 print(p)
 
-# pada testacse kada je ceo nums zapravo zbir >= target.
+# Test case is not passed because problem solution requires O(n) time, and this approach is O(n^2)
+# brute force solved
+
+
+# O(n) time complexity solution, sliding window (expected approach)
+nums2 = [2,3,1,2,4,3]
+target2 = 7 
+
+def solution_sliding(nums,target):
+    res = len(nums) + 1
+    left = 0
+    window_sum = 0
+    for right in range(len(nums)):
+        window_sum +=nums[right]
+        while window_sum >= target:
+            res = min(right-left+1,res)
+            window_sum -=nums[left]
+            left+=1
+
+    if res == len(nums) + 1:
+        return 0
+    else:
+        return res
+
+            
+
+
+z = solution_sliding(nums2,target2)
+print(f"Solution: {z}")
