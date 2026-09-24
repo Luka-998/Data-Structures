@@ -25,25 +25,37 @@ Example 2:
 Input: nums = [0,0,0,0,0], goal = 0
 Output: 15
 """
-nums = [1,0,1,0,1]
+nums = [1,0,1,0,1] 
 goal = 2
 
-def solution(arr,goal):
+# arrays with sum <= 2 (0,1,2)
+# arrays with sum <=1 (0,1)
+
+def at_most(arr,at_most_num):
     res = 0
-
-    right = 0
-    left = 0
-    while left < len(arr):
-        current = sum(arr[left:right])
-        if current != goal:
-            right+=1
-
-        else:
-            res+=1
+    left= 0
+    curr =0
+    for r in  range(len(arr)):
+        curr+=arr[r]
+        while curr > at_most_num:
+            curr -=arr[left]
             left+=1
-            right=left
+
+        res +=1
     return res
+
+
+
+z = at_most(nums,2)
+print(z)
+"""
+def solution(arr,goal):
+    at_most_2 = 0
+    while at_most_2 <= goal:
+
+    res = 0
 
 
 z = solution(nums,goal)
 print(z)
+"""
