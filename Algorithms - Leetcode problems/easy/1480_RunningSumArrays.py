@@ -33,7 +33,7 @@ nums = [1,2,3,4]
 def solution(arr):
     prefixSum = [0] * len(arr)
 
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
         prefixSum[i] = sum(arr[:i+1])
     return prefixSum
 
