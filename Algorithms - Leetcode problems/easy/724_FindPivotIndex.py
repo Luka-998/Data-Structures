@@ -37,22 +37,22 @@ Left sum = 0 (no elements to the left of index 0)
 Right sum = nums[1] + nums[2] = 1 + -1 = 0
 """
 
-nums = [1,7,3,6,5,6]
+nums = [-1,-1,0,1,1,0]
 
 def solution(array):
-    index = 0
-    right_sum = 0
-    left_sum = 0
-    middle = (len(nums)-1) // 2
-    
-    if not len(array) % 2:
-        index = [array[middle],array[middle+1]]
-    else:
-        index = array[middle]
-
-    while left_sum != right_sum:
-        
+    index = []
+    leftSum =0
+    rightSum=0
+    for i in range(len(array)):
+        # i = 0
+        # leftSum = None
+        # rightSum = i + 1
+        rightSum = sum(array[i+1:])
+        leftSum = sum(array[:i])
+        if rightSum == leftSum:
+            return i
+    return -1
 # nije ovo dobra ideja poznavanje indeksa mi nista ne nzaci jer mi treba taj levi i desni sum
 z = solution(nums)
-                
+print(z)
     
