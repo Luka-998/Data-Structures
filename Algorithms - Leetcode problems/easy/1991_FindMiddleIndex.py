@@ -37,6 +37,8 @@ Explanation: There is no valid middleIndex.
 
 nums = [2,3,-1,8,4]
 
+
+""" brute force
 def solution(array):
     leftSum = 0
     rightSum = 0
@@ -49,4 +51,25 @@ def solution(array):
     return -1
 
 z = solution(nums)
+print(z)
+
+"""
+
+def solution_2(array):
+
+    totalSum = sum(array)
+    current = 0
+
+    for index in range(len(array)):
+        l = 0
+        current = 0
+        total = sum(array)
+
+        for i in range(len(array)):
+            right = total - l - array[i]
+            if l == right:
+                return i
+            l+=array[i]
+        return -1
+z = solution_2(nums)
 print(z)
