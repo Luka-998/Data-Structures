@@ -23,15 +23,24 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
 """
 
+"BRUTE FORCE"
+
 nums = [1,2,3,4]
 
 def solution(array):
+    """
+        for loop goes over each position in the nums array
+        inner loop: from start , skipping current index , *= others
+    
+    """ 
     result = [1] * len(array)
-    prefixProd = 1
-    for r in range(len(array)):
-        # 0 -> 1 -> [2,3,4]
-        prefixProd *=array[r]
-        result[r] *= (array[r] 
+
+    for i in range(len(array)):
+        current = 1
+        for j in range(len(array)):
+            if j != i:
+                current*=array[j]
+        result[i] = current
     print(result)
+
 z = solution(nums)
-print(z)
