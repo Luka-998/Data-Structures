@@ -41,6 +41,36 @@ def solution(array):
             if j != i:
                 current*=array[j]
         result[i] = current
-    print(result)
+    return result
 
 z = solution(nums)
+
+# Brute force fine
+
+def solution_o_n(array):
+    
+    """
+        One for loop, prefixPrd calculates left product 
+        suffixProd calculates right product 
+        both excluding current index
+
+
+    - error encountered -> Cant index slice of the list pre & post index ?
+    - How to solve this?
+    
+    """
+    leftProd = 1
+    rightProd = 1
+    result = [1] * len(array)
+
+    for r in range(len(array)):
+        result[r] = leftProd
+        leftProd*=array[r]
+    rightProd=1
+    for i in range(len(array))[::-1]:
+        result[i] *= rightProd
+        rightProd *=array[i]
+    return result
+    
+z = solution_o_n(nums)
+print(z)
