@@ -34,9 +34,22 @@ def solution(arr,target):
     seen_numbers = {}
 
     """
-    resi ovo , fora je sa hashMap-om i complementom
+    Intuition: 
+
+    1) For each number, target - current number is complement, and if that complement exists
+    in the hashmap, that means we have a solution [currentNumber_index,seen_number[complement]]
+    
     """
 
+    for i in range(len(arr)):
+
+        complement = target - arr[i]
+    
+        if complement in seen_numbers: # on 3rd iteration, this is true
+            print(seen_numbers)
+            return [seen_numbers[complement],i]
+
+        seen_numbers[arr[i]] = i
 
     
     
