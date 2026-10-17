@@ -79,3 +79,4 @@ ukoliko mi je potrebna samo jedna kolona, pisem 'col1' , a ukoliko imam vise od 
 
 
 """
+z = solution(df)
