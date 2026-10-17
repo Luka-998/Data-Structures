@@ -80,3 +80,11 @@ ukoliko mi je potrebna samo jedna kolona, pisem 'col1' , a ukoliko imam vise od 
 
 """
 z = solution(df)
+
+
+def solution_query(df:pd.DataFrame):
+
+    q = df.query("area>=3000000 or population>=25000000")[['name','population','area']]
+    print(q)
+
+z = solution_query(df)
